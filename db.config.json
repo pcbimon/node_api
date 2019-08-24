@@ -1,0 +1,11 @@
+{
+  "local_mon": {
+    "username": "root",
+    "password": "1234",
+    "database": "northwind",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": false
+  }
+
+}

@@ -1,9 +1,18 @@
 import express from 'express';
 import {wiki} from './router/wiki.router';
+import { sequelize } from './models';
+// Test connection
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log('Connection has been established successfully.');
+    })
+    .catch(err => {
+        console.error('Unable to connect to the database:', err);
+    });
 // initial ExpressJS
 const app = express();
-//***require router***//
-//const wiki = require('router/wiki.router.js');
+
 // Example Route
 app.get('/', function (req:any,res:any) {
     res.send('Express API running');

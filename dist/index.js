@@ -5,10 +5,18 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const wiki_router_1 = require("./router/wiki.router");
+const models_1 = require("./models");
+// Test connection
+models_1.sequelize
+    .authenticate()
+    .then(() => {
+    console.log('Connection has been established successfully.');
+})
+    .catch(err => {
+    console.error('Unable to connect to the database:', err);
+});
 // initial ExpressJS
 const app = express_1.default();
-//***require router***//
-//const wiki = require('router/wiki.router.js');
 // Example Route
 app.get('/', function (req, res) {
     res.send('Express API running');
