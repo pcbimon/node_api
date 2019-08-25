@@ -5,6 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const wiki_router_1 = require("./router/wiki.router");
+const product_router_1 = require("./router/product.router");
 const models_1 = require("./models");
 // Test connection
 models_1.sequelize
@@ -23,6 +24,7 @@ app.get('/', function (req, res) {
 });
 //Route from Router File
 app.use('/wiki', wiki_router_1.wiki);
+app.use('/product', product_router_1.product);
 console.log("App Started on http://127.0.0.1:3000");
 app.listen(3000);
 //# sourceMappingURL=index.js.map
